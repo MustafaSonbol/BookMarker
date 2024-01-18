@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans:wght@300&family=Amatic+SC&family=Inter:wght@600&family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,200&family=Open+Sans:wght@300&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,400;0,600;0,800;1,100;1,200&family=Racing+Sans+One&family=Roboto+Flex:opsz,wght@8..144,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4e0ed8390d.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="home">
+        <div class="container p-5">
+            <h1 class="text-center position-relative m-auto overflow-hidden">Bookmarker</h1>
+            <div class="w-100 mt-5 m-auto"></div>
+            <h2 class="fs-3 text-center my-3 m-auto text-nowrap"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\User Interaction Area\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+            <label for="bookmarkNameInput" class="my-2 fw-bold"><i class="fa-solid fa-book-bookmark fa-fw pe-2"></i>
+                Site
+                Name</label>
+            <input type="text" oninput="nameValidation()" placeholder="Bookmark Name" id="bookmarkNameInput"
+                class="form-control">
+            <p class="alert alert-danger my-2 d-none" id="nameAlert">Invalid Input, Enter from [3 to 8] Letters Only.
+            </p>
+            <div class="w-75 my-3"></div>
+            <label for="bookmarkUrlInput" class="my-2 fw-bold"><i class="fa-solid fa-link pe-2 fa-fw"></i> Site
+                Name</label>
+            <input type="text" oninput="urlValidation()" placeholder="Bookmark Url" id="bookmarkUrlInput"
+                class="form-control">
+            <p class="alert alert-danger d-none" id="urlAlert">Invalid Input, Must Contain {.com}, Example: ahmed.com
+            </p>
+            <div class="submit pt-3 m-auto">
+                <button onclick="addBookmark()" class="btn bg-danger text-white px-5">Submit</button>
+            </div>
+            <input placeholder="Search.." id ="searchInput" class="form-control my-3" onkeyup="SearchBookmark(this.value)" type="text">
+            <div class="w-100 mt-4 m-auto"></div>
+            <!--************************************Display Table*******************************************-->
+            <table class="table text-center mt-4">
+                <thead>
+                    <th>Index</th>
+                    <th>Website Name</th>
+                    <th>Visit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody id='tbody'>
+                </tbody>
+
+            </table>
+
+        </div>
+    </section>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
